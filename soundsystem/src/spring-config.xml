@@ -1,6 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:p="http://www.springframework.org/schema/p" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <!--    <bean id="compactDisc" class="com.lianyz.SgtPeppers" />-->
+    <!--    <bean id="compactDisc" class="com.lianyz.BlankDisc">-->
+    <!--        <constructor-arg value="go home" />-->
+    <!--        <constructor-arg value="Dehua Liu" />-->
+    <!--        <constructor-arg>-->
+    <!--            <list>-->
+    <!--                <value>Sgt. Pepper's Lonely Hearts Club Band</value>-->
+    <!--                <value>With a Little Help from My Friends</value>-->
+    <!--                <value>Lucy in the Sky with Diamonds</value>-->
+    <!--                <value>Fixing a Hole</value>-->
+    <!--            </list>-->
+    <!--        </constructor-arg>-->
+    <!--    </bean>-->
+
+<!--    <bean id="compactDisc" class="com.lianyz.BlankDisc">-->
+<!--        <property name="title" value="Sgt. Pepper's Lonely Hearts Club Band"/>-->
+<!--        <property name="artist" value="The Beatles"/>-->
+<!--        <property name="tracks">-->
+<!--            <list>-->
+<!--                <value>Sgt. Pepper's Lonely Hearts Club Band</value>-->
+<!--                <value>With a Little Help from My Friends</value>-->
+<!--                <value>Lucy in the Sky with Diamonds</value>-->
+<!--                <value>Fixing a Hole</value>-->
+<!--            </list>-->
+<!--        </property>-->
+<!--    </bean>-->
+
+<!--    <bean id="compactDisc" class="com.lianyz.BlankDisc"-->
+<!--        p:title="I and My Country"-->
+<!--        p:artist="Fei Wang" >-->
+<!--        <property name="tracks">-->
+<!--            <list>-->
+<!--                <value>Sgt. Pepper's Lonely Hearts Club Band</value>-->
+<!--                <value>With a Little Help from My Friends</value>-->
+<!--                <value>Lucy in the Sky with Diamonds</value>-->
+<!--                <value>Fixing a Hole</value>-->
+<!--            </list>-->
+<!--        </property>-->
+<!--    </bean>   -->
+
+
+
+    <!--    <bean id="compactDisc"-->
+    <!--          class="com.lianyz.BlankDisc"-->
+    <!--          c:_title="go back"-->
+    <!--          c:_artist="sun yue" />-->
+    <!--    <bean class="com.lianyz.CDPlayer" >-->
+    <!--        <constructor-arg ref="compactDisc" />-->
+    <!--    </bean>-->
+
+    <!--    <bean class="com.lianyz.CDPlayer" c:cd-ref="compactDisc" />-->
+    <!--    <bean class="com.lianyz.CDPlayer" c:cd-ref="compactDisc" />-->
+
+    <!--    <bean id="cdPlayer" class="com.lianyz.CDPlayer" >-->
+    <!--        <property name="compactDisc" ref="compactDisc" />-->
+    <!--    </bean>-->
+
+
+    <import resource="cd-config.xml" />
+
+<!--    <bean class="com.lianyz.CDConfig" />-->
+
+    <bean id="cdPlayer" class="com.lianyz.CDPlayer" c:cd-ref="compactDisc" />
 
 </beans>

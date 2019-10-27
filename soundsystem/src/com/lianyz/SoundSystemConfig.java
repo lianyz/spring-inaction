@@ -1,16 +1,14 @@
 package com.lianyz;
 
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
+import org.springframework.context.annotation.ImportResource;
 
 @Configuration
-public class CDPlayerConfig {
+@Import({CDPlayerConfig.class})
+@ImportResource("classpath:cd-config.xml")
+public class SoundSystemConfig {
 
-    @Bean
-    public CDPlayer cdPlayer(CompactDisc compactDisc) {
-        return new CDPlayer(compactDisc);
-    }
 
 }
