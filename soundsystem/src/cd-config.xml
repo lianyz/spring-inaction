@@ -7,7 +7,11 @@
         <value>Sgt. Pepper's Lonely Hearts Club Band</value>
         <value>With a Little Help from My Friends</value>
         <value>Lucy in the Sky with Diamonds</value>
-        <value>Fixing a Hole</value>
+        <value>Fixing a Hole1</value>
+        <value>Fixing a Hole2</value>
+        <value>Fixing a Hole3</value>
+        <value>Fixing a Hole4</value>
+        <value>Fixing a Hole5</value>
     </util:list>
 
     <bean id="compactDisc" class="com.lianyz.BlankDisc"
