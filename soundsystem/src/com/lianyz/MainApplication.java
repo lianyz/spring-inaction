@@ -10,6 +10,13 @@ public class MainApplication {
 
         CDPlayer player = context.getBean(CDPlayer.class);
         player.play();
+        player.playTrack(0);
+
+        CompactDisc disc = (CompactDisc) context.getBean("compactDisc");
+        disc.playTrack(0);
+
+        TrackCounter2 counter = context.getBean(TrackCounter2.class);
+        System.out.println("TrackCounter2: " + counter.toString());
 
         context.close();
     }

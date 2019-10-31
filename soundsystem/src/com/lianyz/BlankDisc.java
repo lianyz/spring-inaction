@@ -1,5 +1,7 @@
 package com.lianyz;
 
+import org.springframework.aop.framework.AopContext;
+
 import java.util.List;
 
 public class BlankDisc implements CompactDisc {
@@ -12,14 +14,17 @@ public class BlankDisc implements CompactDisc {
     @Override
     public void play() {
         System.out.println("Playing " + title + " by " + artist);
-        for(String track : tracks) {
-            System.out.println("-Track: " + track);
+        for(int trackNumber =0; trackNumber < tracks.size(); ++trackNumber) {
+            // todo 此处不会出发切面通知？
+//          // AOP方法嵌套调用失效
+//            this.playTrack(trackNumber);
+            ((BlankDisc) AopContext.currentProxy()).playTrack(trackNumber);
         }
     }
 
     @Override
     public void playTrack(int trackNumber) {
-        System.out.println(tracks.get(trackNumber));
+        System.out.println("-PlayTrack:" + tracks.get(trackNumber));
     }
 
     public void setTitle(String title) {

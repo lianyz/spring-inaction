@@ -10,21 +10,12 @@
 
     <aop:config proxy-target-class="true">
         <aop:aspect ref="audience">
-            <aop:before
-                    pointcut="execution(* com.lianyz.concertXml.Performance.perform(..))"
-                    method="silenceCellPhones" />
-
-            <aop:before
-                    pointcut="execution(* com.lianyz.concertXml.Performance.perform(..))"
-                    method="takeSeats" />
-
-            <aop:after-returning
-                    pointcut="execution(* com.lianyz.concertXml.Performance.perform(..))"
-                    method="applause" />
-
-            <aop:after-throwing
-                    pointcut="execution(* com.lianyz.concertXml.Performance.perform(..))"
-                    method="demandRefund" />
+            <aop:pointcut id="performance" expression="execution(* com.lianyz.concertXml.Performance.perform(..))" />
+            <aop:before pointcut-ref="performance" method="silenceCellPhones" />
+            <aop:before pointcut-ref="performance" method="takeSeats" />
+            <aop:after-returning pointcut-ref="performance" method="applause" />
+            <aop:after-throwing pointcut-ref="performance" method="demandRefund" />
+            <aop:around pointcut-ref="performance" method="watchPerformance" />
         </aop:aspect>
     </aop:config>
 </beans>

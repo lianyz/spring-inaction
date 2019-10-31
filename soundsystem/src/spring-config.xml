@@ -2,7 +2,8 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:c="http://www.springframework.org/schema/c"
        xmlns:p="http://www.springframework.org/schema/p" xmlns:util="http://www.springframework.org/schema/util"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
 
     <!--    <bean id="compactDisc" class="com.lianyz.SgtPeppers" />-->
     <!--    <bean id="compactDisc" class="com.lianyz.BlankDisc">-->
@@ -62,10 +63,38 @@
     <!--    </bean>-->
 
 
-    <import resource="cd-config.xml" />
+<!--    <import resource="cd-config.xml" />-->
 
 <!--    <bean class="com.lianyz.CDConfig" />-->
 
+    <util:list id="trackList">
+        <value>Sgt. Pepper's Lonely Hearts Club Band</value>
+        <value>With a Little Help from My Friends</value>
+        <value>Lucy in the Sky with Diamonds</value>
+        <value>Fixing a Hole1</value>
+        <value>Fixing a Hole2</value>
+        <value>Fixing a Hole3</value>
+        <value>Fixing a Hole4</value>
+        <value>Fixing a Hole5</value>
+    </util:list>
+
+    <bean id="compactDisc" class="com.lianyz.BlankDisc"
+          p:title="I and My Country"
+          p:artist="Fei Wang"
+          p:tracks-ref="trackList"/>
+
     <bean id="cdPlayer" class="com.lianyz.CDPlayer" c:cd-ref="compactDisc" />
+
+    <bean id="trackCounter2" class="com.lianyz.TrackCounter2" />
+
+    <aop:aspectj-autoproxy expose-proxy="true" />
+
+    <aop:config proxy-target-class="true">
+        <aop:aspect ref="trackCounter2">
+            <aop:pointcut id="trackPlayed" expression="execution(* com.lianyz.CompactDisc.playTrack(int)) and args(trackNumber)"/>
+
+            <aop:before method="countTrack" pointcut-ref="trackPlayed" />
+        </aop:aspect>
+    </aop:config>
 
 </beans>
