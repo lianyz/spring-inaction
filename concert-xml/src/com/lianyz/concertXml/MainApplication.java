@@ -11,6 +11,9 @@ public class MainApplication {
         Drama drama = (Drama)context.getBean("drama");
         drama.perform();
 
+        Encoreable encoreable = (Encoreable)drama;
+        encoreable.performEncore();
+
         context.close();
     }
 }

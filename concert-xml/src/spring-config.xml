@@ -16,6 +16,11 @@
             <aop:after-returning pointcut-ref="performance" method="applause" />
             <aop:after-throwing pointcut-ref="performance" method="demandRefund" />
             <aop:around pointcut-ref="performance" method="watchPerformance" />
+
+            <aop:declare-parents
+                    types-matching="com.lianyz.concertXml.Performance"
+                    implement-interface="com.lianyz.concertXml.Encoreable"
+                    default-impl="com.lianyz.concertXml.DefaultEncoreable" />
         </aop:aspect>
     </aop:config>
 </beans>
