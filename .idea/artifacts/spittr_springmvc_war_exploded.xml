@@ -1,0 +1,19 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="spittr-springmvc:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/spittr_springmvc_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="spittr-springmvc/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="spittr-springmvc" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="spring-4.3.18" />
+          <element id="library" level="project" name="Spring MVC-4.3.18.RELEASE" />
+          <element id="library" level="project" name="javax.servlet-api-4.0.1" />
+          <element id="library" level="project" name="commons-logging-1.2" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
