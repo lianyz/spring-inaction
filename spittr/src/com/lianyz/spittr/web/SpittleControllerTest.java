@@ -1,8 +1,7 @@
 package com.lianyz.spittr.web;
 
-import com.lianyz.spittr.com.lianyz.spittr.data.Spittle;
-import com.lianyz.spittr.com.lianyz.spittr.data.SpittleRepository;
 import com.lianyz.spittr.config.RootConfig;
+import com.lianyz.spittr.data.*;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;

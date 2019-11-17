@@ -1,7 +1,6 @@
 package com.lianyz.spittr.web;
 
-import com.lianyz.spittr.com.lianyz.spittr.data.Spittle;
-import com.lianyz.spittr.com.lianyz.spittr.data.SpittleRepository;
+import com.lianyz.spittr.data.SpittleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

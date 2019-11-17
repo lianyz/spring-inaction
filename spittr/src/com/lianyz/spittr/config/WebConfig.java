@@ -12,7 +12,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan("spitter.web")
+@ComponentScan("com.lianyz.spittr.web")
 public class WebConfig extends WebMvcConfigurerAdapter {
 
     @Bean

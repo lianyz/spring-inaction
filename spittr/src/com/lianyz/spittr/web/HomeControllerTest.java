@@ -1,14 +1,11 @@
 package com.lianyz.spittr.web;
 
-import com.lianyz.spittr.com.lianyz.spittr.data.Spittle;
-import com.lianyz.spittr.com.lianyz.spittr.data.SpittleRepository;
 import com.lianyz.spittr.config.RootConfig;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.web.servlet.view.InternalResourceView;
 
 import java.util.ArrayList;
 import java.util.Date;

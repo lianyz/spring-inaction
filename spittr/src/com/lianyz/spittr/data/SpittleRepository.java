@@ -1,4 +1,4 @@
-package com.lianyz.spittr.com.lianyz.spittr.data;
+package com.lianyz.spittr.data;
 
 import java.util.List;
 
